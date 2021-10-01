@@ -15,14 +15,31 @@
      <label for="cst">Central Standard Time</label><br>
     <input type="radio" name="tz" value="mst" id="mst">
 <label for="mst">Mountain Standard Time</label><br>
-<input ytpe="radio" name="tz" value="pst" id="pst">
+<input type="radio" name="tz" value="pst" id="pst">
 <label for="pst">Pacific Standard Time</label><br>
-<input ytpe="radio" name="tz" value="ast" id="ast">
+<input type="radio" name="tz" value="ast" id="ast">
 <label for="ast"> Alaska Standard Time</label><br>
 <input type="radio" name="tz" value="hast" id="hast">
 <label for="hast">Hawaii- Aleutian Standard Time</label><br>
-<button type="button" value="submit">submit</button>
+<button type="button" value="submit" onclick="output()">submit</button>
 </form><br>
 <div id="timezone"></div>
+<script type="text/javascript">
+function output(){
+    var radioButtons= document.getElementByName("tz");
+    var radioValue= radioButtons[0].value;
+    for (var i = 0; i < radioButtons.length; i++){
+  //tasks go here
+  if (radioButtons[i].checked == true){
+  //actions go here
+  radioValue= radioButtons[i].value;
+  document.getElementById("timezone").innerHTML= radioValue;
+}
+
+}
+
+
+}
+</script>
 </body>
 </html>
